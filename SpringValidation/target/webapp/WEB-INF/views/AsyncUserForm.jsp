@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<form:form method="post" action="create" commandName="userLogin">
+	<form:form method="post" action="user/create" commandName="userLogin">
 		<table>
 			<tr><td>First Name : </td><td><form:input path="firstName" maxlength="50" ></form:input></td><td><span class="error" id="firstNameError"></span></td></tr>
 			<tr><td>Last Name : </td><td><form:input path="lastName" maxlength="50" ></form:input></td><td><span class="error" id="lastNameError"></span></td></tr>

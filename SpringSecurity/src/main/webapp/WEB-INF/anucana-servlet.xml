@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:aop="http://www.springframework.org/schema/aop" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:security="http://www.springframework.org/schema/security" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans  
+					http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
+					http://www.springframework.org/schema/context 
+					http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+					http://www.springframework.org/schema/mvc 
+					http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd 
+					http://www.springframework.org/schema/aop 
+					http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+					http://www.springframework.org/schema/security
+					http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+	
+	<mvc:annotation-driven />
+	
+	<context:component-scan base-package="com.anucana" />
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value>/WEB-INF/views/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<security:http use-expressions="true" auto-config="true">
+		<security:form-login login-page="/home" login-processing-url="/login" default-target-url="/managed/dashboard" username-parameter="username" password-parameter="password"/>
+		<security:logout logout-url="/logout" logout-success-url="/home" />
+		
+		<security:intercept-url pattern="/managed/dashboard" access="hasRole('ur_gu')"/>
+		<security:intercept-url pattern="/managed/changepassword" access="hasRole('ur_gu')"/>
+		<security:intercept-url pattern="/managed/createAnEvent" access="hasRole('ur_cmo')"/>
+		<security:intercept-url pattern="/managed/suspendOtherUser" access="hasRole('ur_a')"/>
+		
+	</security:http>
+
+	<bean id="anucanaAuthService" class="com.anucana.web.service.AuthenticationService" />
+	
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="anucanaAuthService" >
+			<security:password-encoder ref="passwordEncoder"></security:password-encoder>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<!-- To be moved to security configuration file  -->
+	<bean class="org.springframework.security.authentication.encoding.ShaPasswordEncoder" id="passwordEncoder"></bean>
+</beans>
