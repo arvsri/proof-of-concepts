@@ -18,12 +18,7 @@ import org.jets3t.service.security.AWSCredentials;
 
 public class AWSS3Service {
 
-	private static String username = "AKIAIMDJLM32LQYM4ELQ";
-	
-	private static String password = "L8skQQevYcMhcBHeoRmOQxMBsOzNvZkMMMfcWO8a";
-	
-	
-	
+
 	public static void main(String[] args) {
 		//readFromS3();
 		//writeToS3();
