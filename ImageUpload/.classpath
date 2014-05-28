@@ -74,4 +74,10 @@
       <attribute value="jar:file:/C:/Users/asrivastava/.m2/repository/org/imgscalr/imgscalr-lib/4.2/imgscalr-lib-4.2-javadoc.jar!/" name="javadoc_location"/>
     </attributes>
   </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/net/java/dev/jets3t/jets3t/0.9.1/jets3t-0.9.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.8/commons-codec-1.8.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpclient/4.3.2/httpclient-4.3.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/httpcomponents/httpcore/4.3.1/httpcore-4.3.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/jamesmurty/utils/java-xmlbuilder/0.6/java-xmlbuilder-0.6.jar"/>
+  <classpathentry kind="var" path="M2_REPO/net/iharder/base64/2.3.8/base64-2.3.8.jar"/>
 </classpath>
