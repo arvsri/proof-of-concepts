@@ -28,7 +28,7 @@ public class AWSS3Service {
 
 
 	private static void reWriteToS3()  {
-		AWSCredentials cred = new AWSCredentials(username, password);
+		AWSCredentials cred = null;//new AWSCredentials();
 		RestS3Service service = new RestS3Service(cred);
 		S3Bucket[] buckets;
 		try {
@@ -53,7 +53,7 @@ public class AWSS3Service {
 
 	
 	private static void readTimedURL() {
-		AWSCredentials cred = new AWSCredentials(username, password);
+		AWSCredentials cred = null;//new AWSCredentials(username, password);
 		RestS3Service service = new RestS3Service(cred);
 		try {
 			S3Bucket[] buckets = service.listAllBuckets();
@@ -69,7 +69,7 @@ public class AWSS3Service {
 
 
 	private static void readFromS3() {
-		AWSCredentials cred = new AWSCredentials(username, password);
+		AWSCredentials cred = null;//new AWSCredentials(username, password);
 		RestS3Service service = new RestS3Service(cred);
 		InputStream is = null;
 		FileOutputStream fos = null;
@@ -130,7 +130,7 @@ public class AWSS3Service {
 
 
 	private static void writeToS3()  {
-		AWSCredentials cred = new AWSCredentials(username, password);
+		AWSCredentials cred = null;//new AWSCredentials(username, password);
 		RestS3Service service = new RestS3Service(cred);
 		S3Bucket[] buckets;
 		try {
