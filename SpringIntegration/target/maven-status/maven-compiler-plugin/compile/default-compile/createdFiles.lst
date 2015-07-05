@@ -1,0 +1,10 @@
+self\poc\endpoints\splitters\SplittingBean.class
+self\poc\endpoints\serviceactivators\ExampleMain.class
+self\poc\endpoints\splitters\ExampleMain.class
+self\poc\endpoints\gateways\HelloService.class
+self\poc\endpoints\serviceactivators\MessageReceiver.class
+self\poc\endpoints\gateways\ExampleMain.class
+self\poc\endpoints\gateways\MyHelloService.class
+self\poc\endpoints\serviceactivators\MyHelloService.class
+self\poc\App.class
+self\poc\endpoints\splitters\OutputChannelReader.class
