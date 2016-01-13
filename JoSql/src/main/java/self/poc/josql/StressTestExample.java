@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.josql.Query;
+import org.josql.QueryExecutionException;
+import org.josql.QueryParseException;
 import org.josql.QueryResults;
 
 
@@ -20,9 +22,26 @@ public class StressTestExample {
 
 
     public static void main(String[] args) throws Exception {
+        setupLargeNumberOfEmployees(10000000, 503);
+        runTest(10, 3);
+        runTest(100, 31);
+        runTest(1000, 311);
+        runTest(10000, 3019);
+        runTest(100000, 30059);
+        runTest(1000000, 304883);
+        runTest(10000000, 1299827);
+    }
+
+    private static void runTest(int numberOfEmployees, int numberOfDepatments)
+            throws ParseException, QueryParseException, QueryExecutionException {
+        System.out.println("Setting up numberOfEmployees = "
+                + numberOfEmployees
+                + " and numberOfDepatments = "
+                + numberOfDepatments);
 
         long startTime = new Date().getTime();
-        List<Employee> employees = setupLargeNumberOfEmployees(10000000, 503);
+        List<Employee> employees =
+                setupLargeNumberOfEmployees(numberOfEmployees, numberOfDepatments);
         System.out.println(" Data Setup time = " + (new Date().getTime() - startTime));
 
         startTime = new Date().getTime();
@@ -40,7 +59,7 @@ public class StressTestExample {
         List<Employee> queryResult = result.getResults();
 
         startTime = new Date().getTime();
-        employees = setupLargeNumberOfEmployees(10000000, 503);
+        employees = setupLargeNumberOfEmployees(numberOfEmployees, numberOfDepatments);
         System.out.println(" Data Setup time = " + (new Date().getTime() - startTime));
 
         startTime = new Date().getTime();
@@ -64,10 +83,19 @@ public class StressTestExample {
         });
 
         System.out.println(" Execution in java - Time Taken = " + (new Date().getTime() - startTime));
+
         System.out.println(" ------------- Verifying if both fetched the same result ------------------------");
         System.out.println("Query Result Count " + queryResult.size() + "  Java result count " + matchedEmployees.size());
-        System.out.println(" Id of 99th Employee - Query Result " + queryResult.get(0).getId() + "  Java result  " + matchedEmployees.get(0).getId());
 
+        if (queryResult.size() != 0) {
+            System.out.println(" Id of "
+                    + queryResult.size()
+
+                    + " Employee - Query Result "
+                    + queryResult.get(queryResult.size() - 1).getId()
+                    + "  Java result  "
+                    + matchedEmployees.get(queryResult.size() - 1).getId());
+        }
     }
 
     private static List<Employee> setupLargeNumberOfEmployees(int employeeCount, int departmentCount) {

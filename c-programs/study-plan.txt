@@ -1,0 +1,35 @@
+Topics to be covered - 
+       1. Programming 
+       2. Algorithm 
+       3. Data Structures
+
+------------------------------------------------------------
+1. Programming
+
+   C Programming
+     a. arrays, pointers, string, bit manipulation, structures
+   Java - 
+     a. concurrency,collections,serialization
+        
+   
+
+
+
+------------------------------------------------------------
+2. Algorithms
+   Binary Search                                            [ Study ]
+   Selection Sort                                           [ Study + Practice ]
+   Bubble Sort                                              [ Study + Practice ]
+   Insertion Sort                                           [ Study ]
+   Merge Sort                                               [ Study ]
+   Heap Sort                                                [ Study ]
+   QuickSort
+
+
+
+------------------------------------------------------------
+3. Data Structures
+
+   Linked List
+
+
