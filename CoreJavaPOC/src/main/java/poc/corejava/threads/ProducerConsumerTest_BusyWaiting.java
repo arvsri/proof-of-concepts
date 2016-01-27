@@ -19,11 +19,8 @@ public class ProducerConsumerTest_BusyWaiting {
     	ExecutorService executor = Executors.newCachedThreadPool();
     	
     	Restaurant restaurant = new Restaurant();
-    	Chef chef = new Chef(restaurant);
-    	Waiter waiter = new Waiter(restaurant);
-    	
-    	executor.submit(waiter);
-    	executor.submit(chef);
+    	executor.submit(restaurant.getWaiter());
+    	executor.submit(restaurant.getChef());
     	
     	try {
 			TimeUnit.SECONDS.sleep(20);
@@ -79,13 +76,7 @@ class Chef implements Runnable{
 				}
 				this.restaurant.setFood(f);
 			}else{
-				System.out.println("Food is already present in restaurant - so sleeping");
-				try {
-					TimeUnit.SECONDS.sleep(1);
-				} catch (InterruptedException e) {
-					System.out.println("Got interrupted, so returning");
-					return;
-				}
+				System.out.println("Busy waiting - Food is already present in restaurant");
 			}
 		}
 	}	
@@ -122,13 +113,7 @@ class Waiter implements Runnable{
 				this.restaurant.setFood(null);
 				deliver(f);
 			}else{
-				System.out.println("No food is available in restaurant for delivery - so sleeping");
-				try {
-					TimeUnit.SECONDS.sleep(1);
-				} catch (InterruptedException e) {
-					System.out.println("Got interrupted, so returning");
-					return;
-				}
+				System.out.println("Busy Waiting - No food is available in restaurant for delivery");
 			}
 		}
 	}
@@ -141,7 +126,10 @@ class Restaurant {
 	private Chef chef = null;
 	private Waiter waiter = null;
 
-	
+	public Restaurant(){
+		this.chef = new Chef(this);
+		this.waiter = new Waiter(this);
+	}
 	
 	public Food getFood() {
 		return food;

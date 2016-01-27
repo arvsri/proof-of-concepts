@@ -11,18 +11,15 @@ import java.util.concurrent.TimeUnit;
 //--  MyChef checks if there is no food in restaurant and then produces the food and sets it in MyRestaurant
 //--  MyWaiter checks if there food in restaurant, waiter picks the food and delivers it 
 //--  MyWaiter notifies to the MyChef when it delivers the food. MyChef notifies to the waiter when it picks
-// TODO - to be implemented
+
 public class ProducerConsumerTest_WaitNotify {
 
     public static void main(String[] args) {
     	ExecutorService executor = Executors.newCachedThreadPool();
     	
     	MyRestaurant restaurant = new MyRestaurant();
-    	MyChef chef = new MyChef(restaurant);
-    	MyWaiter waiter = new MyWaiter(restaurant);
-    	
-    	executor.submit(waiter);
-    	executor.submit(chef);
+    	executor.submit(restaurant.getWaiter());
+    	executor.submit(restaurant.getChef());
     	
     	try {
 			TimeUnit.SECONDS.sleep(20);
@@ -69,24 +66,25 @@ class MyChef implements Runnable{
 		// infinite loop to show that chef is working continuously - till interrupted
 		while(!Thread.interrupted()){
 
-			synchronized (this.restaurant) {
+			synchronized (this) {
 				while(this.restaurant.getFood() != null){
 					try {
 						wait();
 					} catch (InterruptedException e) {
-						break;
+						return;
 					}
 				}
 			}
 			
+			// Prepare the food, and set it on restaurant
+			MyFood f = prepare();
+			if (this.restaurant.getFood() != null) {
+				throw new RuntimeException("Error - race condition - I produced food but waitor has not delivered by previous food");
+			}
+			this.restaurant.setFood(f);
 			
-			if(this.restaurant.getFood() == null){
-				// Prepare the food, and set it on restaurant
-				MyFood f = prepare();
-				if(this.restaurant.getFood() != null){
-					throw new RuntimeException("Error - race condition - I produced food but waitor has not delivered by previous food");
-				}
-				this.restaurant.setFood(f);
+			synchronized(this.restaurant.getWaiter()){
+				this.restaurant.getWaiter().notifyAll();
 			}
 		}
 	}	
@@ -117,19 +115,25 @@ class MyWaiter implements Runnable{
 		
 		// infinite loop to show that waiter is working continuously - till interrupted
 		while(!Thread.interrupted()){
-			if(this.restaurant.getFood() != null){
-				// get the food, remove it from restaurant and deliver it
-				MyFood f = this.restaurant.getFood();
-				this.restaurant.setFood(null);
-				deliver(f);
-			}else{
-				System.out.println("No food is available in restaurant for delivery - so sleeping");
-				try {
-					TimeUnit.SECONDS.sleep(1);
-				} catch (InterruptedException e) {
-					System.out.println("Got interrupted, so returning");
-					return;
+			
+
+
+			synchronized (this) {
+				while(this.restaurant.getFood() == null){
+					try {
+						wait();
+					} catch (InterruptedException e) {
+						return;
+					}
 				}
+			}
+			// get the food, remove it from restaurant and deliver it
+			MyFood f = this.restaurant.getFood();
+			this.restaurant.setFood(null);
+			deliver(f);
+			
+			synchronized(this.restaurant.getChef()){
+				this.restaurant.getChef().notifyAll();
 			}
 		}
 	}
@@ -142,7 +146,10 @@ class MyRestaurant {
 	private MyChef chef = null;
 	private MyWaiter waiter = null;
 
-	
+	public MyRestaurant(){
+		this.chef = new MyChef(this);
+		this.waiter = new MyWaiter(this);
+	}
 	
 	public MyFood getFood() {
 		return food;
