@@ -1,4 +1,4 @@
-package poc.corejava.patterns;
+package poc.corejava.gof.patterns;
 
 // Usage java.awt.Toolkit.
 class AbstractFactoryPattern {

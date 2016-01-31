@@ -1,4 +1,4 @@
-package poc.corejava.patterns;
+package poc.corejava.gof.patterns;
 
 public class StrategyPattern {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package poc.corejava.patterns;
+package poc.corejava.gof.patterns;
 
 class ProxyPattern {
 	public static void main(String[] args) {

@@ -46,15 +46,15 @@ public class OfficeSupervisor {
 	public static void main(String... args){
 		
 		List<Employee> employees = new ArrayList<Employee>();
-		employees.add(new Employee(1, "Arvind", 33, Employee.sex.male, "Gurgaon", "arvind.srivastava@markit.com"));
-		employees.add(new Employee(2, "Jimmy", 34, Employee.sex.male, "Dublin", "jimmy.george@markit.com"));
-		employees.add(new Employee(3, "Ed", 35, Employee.sex.male, "Dublin", "ed.kinsella@markit.com"));
-		employees.add(new Employee(4, "Monika", 26, Employee.sex.female, "Delhi", "monika@markit.com"));
-		employees.add(new Employee(5, "Aarti", 29, Employee.sex.female, "Delhi", "aarti@markit.com"));
-		employees.add(new Employee(6, "Vandana", 32, Employee.sex.female, "Gurgaon", "vandana@markit.com"));
-		employees.add(new Employee(7, "Shalini", 29, Employee.sex.female, "Gurgaon", "shalini@markit.com"));
-		employees.add(new Employee(8, "Parul", 27, Employee.sex.female, "Delhi", "parul@markit.com"));
-		employees.add(new Employee(9, "Paritosh", 38, Employee.sex.male, "Gurgaon", "paritosh@markit.com"));
+		employees.add(new Employee(1, "vikas", 33, Employee.sex.male, "Gurgaon", "vikas.srivastava@abc-company.com"));
+		employees.add(new Employee(2, "mike", 34, Employee.sex.male, "Dublin", "mike.george@abc-company.com"));
+		employees.add(new Employee(3, "tom", 35, Employee.sex.male, "Dublin", "tom.kinsella@abc-company.com"));
+		employees.add(new Employee(4, "radhika", 26, Employee.sex.female, "Delhi", "radhika@abc-company.com"));
+		employees.add(new Employee(5, "lakshmi", 29, Employee.sex.female, "Delhi", "lakshmi@abc-company.com"));
+		employees.add(new Employee(6, "shikha", 32, Employee.sex.female, "Gurgaon", "shikha@abc-company.com"));
+		employees.add(new Employee(7, "shipra", 29, Employee.sex.female, "Gurgaon", "shipra@abc-company.com"));
+		employees.add(new Employee(8, "pooja", 27, Employee.sex.female, "Delhi", "pooja@abc-company.com"));
+		employees.add(new Employee(9, "vibhav", 38, Employee.sex.male, "Gurgaon", "vibhav@abc-company.com"));
 		
 		new OfficeSupervisor(employees).performOfficeWork();
 	}
