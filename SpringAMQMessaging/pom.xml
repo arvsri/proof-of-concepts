@@ -8,7 +8,7 @@
   <name>Spring AMQ Messaging POC</name>
   <url>http://maven.apache.org</url>
    <scm>
-	<developerConnection>scm:git:git://github.com/arvsri/proof-of-concepts</developerConnection>
+	<developerConnection>scm:git:https://github.com/arvsri/proof-of-concepts.git</developerConnection>
    </scm>
    <modules>
 	<module>producer</module>
