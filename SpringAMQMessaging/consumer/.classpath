@@ -20,9 +20,22 @@
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-orm/3.2.8.RELEASE/spring-orm-3.2.8.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jdbc/3.2.8.RELEASE/spring-jdbc-3.2.8.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-tx/3.2.8.RELEASE/spring-tx-3.2.8.RELEASE.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/activemq/activemq-all/5.14.5/activemq-all-5.14.5.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar" sourcepath="M2_REPO/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/spring-jms/3.2.8.RELEASE/spring-jms-3.2.8.RELEASE.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/activemq/activemq-all/5.8.0/activemq-all-5.8.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/activemq/activemq-amqp/5.8.0/activemq-amqp-5.8.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/activemq/activemq-broker/5.8.0/activemq-broker-5.8.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/activemq/activemq-client/5.8.0/activemq-client-5.8.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar" sourcepath="M2_REPO/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/fusesource/hawtbuf/hawtbuf/1.9/hawtbuf-1.9.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/geronimo/specs/geronimo-j2ee-management_1.1_spec/1.0.1/geronimo-j2ee-management_1.1_spec-1.0.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/activemq/activemq-openwire-legacy/5.8.0/activemq-openwire-legacy-5.8.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/qpid/proton-jms/0.3.0-fuse-2/proton-jms-0.3.0-fuse-2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/qpid/proton/0.3.0-fuse-2/proton-0.3.0-fuse-2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/qpid/proton-api/0.3.0-fuse-2/proton-api-0.3.0-fuse-2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/bouncycastle/bcpkix-jdk15on/1.47/bcpkix-jdk15on-1.47.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/bouncycastle/bcprov-jdk15on/1.47/bcprov-jdk15on-1.47.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar" sourcepath="M2_REPO/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.17/log4j-1.2.17.jar" sourcepath="M2_REPO/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/junit/junit/4.10/junit-4.10.jar" sourcepath="M2_REPO/junit/junit/4.10/junit-4.10-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar" sourcepath="M2_REPO/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1-sources.jar"/>
