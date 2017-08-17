@@ -38,7 +38,7 @@ public class App {
 		System.out.println(" ---- Approach 2 ( this approach generates only one query ) ----");
 		query = session
 				.createQuery(
-						"select dept.name as name, dept.location as location, emp as employee "
+						"select dept.name as name, 'Gurgaon' as location, emp as employee "
 								+ "from Department dept left join dept.employees as emp where dept.location = 'Gurgaon'")
 				.setResultTransformer(
 						Transformers.aliasToBean(DepartmentVO.class));
