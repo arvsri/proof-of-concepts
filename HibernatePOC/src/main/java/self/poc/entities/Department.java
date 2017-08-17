@@ -43,4 +43,11 @@ public class Department {
 		this.employees = employees;
 	}
 
+	@Override
+	public String toString() {
+		return "Department [name=" + name + ", location=" + location + "]";
+	}
+	
+	
+
 }
