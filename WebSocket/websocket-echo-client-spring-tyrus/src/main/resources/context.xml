@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="webSocketConnectionManager" class="org.springframework.web.socket.client.WebSocketConnectionManager">
+		<constructor-arg name="client" ref="standardClient" />
+		<constructor-arg name="webSocketHandler" ref="simpleHandler" />
+		<constructor-arg name="uriTemplate" value="ws://localhost:8025/websockets/echo" />
+		<constructor-arg name="uriVariables" value="null" />
+		
+		<property name="autoStartup" value="true"></property>
+	</bean>
+		
+	<bean id="standardClient" class="org.springframework.web.socket.client.standard.StandardWebSocketClient"></bean>
+	
+	<bean id="simpleHandler" class="self.poc.client.SimpleWebSocketHandler"></bean>
+
+</beans>
