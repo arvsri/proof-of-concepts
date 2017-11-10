@@ -15,7 +15,7 @@
 		<property name="delayInSeconds" value="30"></property>
 	</bean>
 		
-	<bean id="standardClient" class="org.springframework.web.socket.client.standard.StandardWebSocketClient"></bean>
+	<bean id="standardClient" class="org.springframework.web.socket.client.jetty.JettyWebSocketClient"></bean>
 	
 	<bean id="simpleHandler" class="self.poc.client.SimpleWebSocketHandler"></bean>
 
