@@ -1,0 +1,35 @@
+.container{
+  margin-left: 30%;
+  margin-top: 100px
+}
+
+rect {
+  fill:rgb(248,190,245);
+}
+
+line {
+  stroke:rgb(255,0,0);
+  stroke-width:2;
+}
+
+circle {
+  fill:rgb(248,190,245);
+  stroke:rgb(255,0,0);
+  stroke-width:2;
+}
+
+.lost{
+  font-size: 18px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: red;
+}
+.win{
+  font-size: 18px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: green;
+}
+.draw{
+  font-size: 18px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: blue;
+}
