@@ -10,7 +10,7 @@
   
 <properties>
 	<jdk.version>1.5</jdk.version>
-	<spring.version>3.2.8.RELEASE</spring.version>
+	<spring.version>5.2.22.RELEASE</spring.version>
 	<xstream.version>1.2.2</xstream.version>
 	<jstl.version>1.2</jstl.version>
 	<servlet.version>2.5</servlet.version>
